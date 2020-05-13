@@ -4,6 +4,7 @@
 
 // o Ecrire « Hello World » dans la console
 
+console.log('Hello World');
 
 /* o Modifier le contenu d’un span qui est dans votre page lors d’un click sur un
 bouton présent dans votre page*/
