@@ -15,6 +15,14 @@ function changeText() {
 
 //o Afficher les tables de multiplications dans une table généré en JS
 
+//function multiGenerate(a,b) {
+
+//    for (var i = 0; i < 8; i++) {
+
+//        var a = 
+//    }
+//}
+
 //2. Créez un formulaire HTML qui contient
 //o Une textbox
 //o Un textblock
