@@ -8,6 +8,11 @@ console.log('Hello World');
 
 /* o Modifier le contenu d’un span qui est dans votre page lors d’un click sur un
 bouton présent dans votre page*/
+
+function changeText() {
+    document.getElementById('change').innerHTML = 'Good Job';
+}
+
 //o Afficher les tables de multiplications dans une table généré en JS
 
 //2. Créez un formulaire HTML qui contient
