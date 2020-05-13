@@ -15,13 +15,18 @@ function changeText() {
 
 //o Afficher les tables de multiplications dans une table généré en JS
 
-//function multiGenerate(a,b) {
+//function multiTables(i , j ) {
 
 //    for (var i = 0; i < 8; i++) {
 
-//        var a = 
+//        for (var j = 0; j < 8;  i++){
+
+            // return i * j;
+//        }
+
 //    }
-//}
+
+
 
 //2. Créez un formulaire HTML qui contient
 //o Une textbox
@@ -34,19 +39,50 @@ function changeText() {
 //o Ajouter un paragraphe dans un div externe au formulaire(on peut avoir
 //plusieurs paragraphes)
 
-function submitForm() {
-    var para = document.createElement('p');
-    para.innerText = 'test';
-    document.getElementById('container').appendChild(para);
-//o Le titre aura le contenu de la textbox
+function submitForm(event) {
+    event.preventDefault(); 
+    console.log('testjksdj');
 
-    var title = document.createElement('h3');
+    var createPara = document.createElement('p');
+    createPara.setAttribute('id', 'para');
+
+    //o Le titre aura le contenu de la textbox
+
+    var createTitle = document.createElement('h3');
+    createTitle.innerText = document.getElementById('title').value;
+    createPara.appendChild(createTitle);
+
+   //o Le contenu aura le contenu de la textblock
+
+    var createContent = document.createElement('span');
+    createContent.innerText = document.getElementById('content').value;
+    createPara.appendChild(createContent);
+
+
     
-//o Le contenu aura le contenu de la textblock
+
 //o Le paragraphe contiendra aussi un bouton permettant de supprimer ce
 //paragraphe
+
+    var createButtonDel = document.createElement('input');
+    createButtonDel.setAttribute('type', 'submit');
+    createButtonDel.addEventListener('click', deletePara);
+    createPara.appendChild(createButtonDel);
+
+    function deletePara() {
+        var delPara = document.getElementById('para');
+        delPara.remove();
+    }
+
+
 //o Lors de l’ajout et de la suppression du paragraphe il doit y avoir une animation
+
+
 //o Le paragraphe aura un fond vert si la checkbox est cochée
+
+    if()
 //o Lors de l’écriture dans la textbox, forcer l’écriture en majuscule
 
+
+    document.getElementById('container').appendChild(createPara);
 }
