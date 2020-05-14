@@ -15,18 +15,47 @@ function changeText() {
 
 //o Afficher les tables de multiplications dans une table généré en JS
 
-//function multiTables(i , j ) {
+var container = document.getElementById('multitable');
 
-//    for (var i = 0; i < 8; i++) {
+var newtable = document.createElement('table');
 
-//        for (var j = 0; j < 8;  i++){
+for (var i = 0; i < 8; i++) {
+    var ligne = document.createElement('tr');
 
-            // return i * j;
-//        }
+    for (var j = 0; j < 8;  i++){
+        var cellule = document.createElement('td');
+        cellule.innerText = i * j;
+        ligne.appendChild(cellule);
+            
+    }
+    table.appendChild(table);
 
-//    }
+   }
 
+    /*
+     * // Exo 3
+    // Récupération du container dans la vue
+    var container = document.getElementById('containerTable');
 
+    // Création de la table
+    var table = document.createElement('table');
+
+    for (var i = 1; i <= 10; i++) {
+        var ligne = document.createElement('tr');
+
+        for (var y = 1; y <= 10; y++) {
+            var cases = document.createElement('td');
+            cases.innerText = i * y;
+            ligne.appendChild(cases);
+        }
+
+        table.appendChild(ligne);
+    }
+
+    // Ajout au container
+    container.appendChild(table);
+     */
+     
 
 //2. Créez un formulaire HTML qui contient
 //o Une textbox
@@ -49,25 +78,23 @@ function submitForm(event) {
     //o Le titre aura le contenu de la textbox
 
     var createTitle = document.createElement('h3');
-    createTitle.innerText = document.getElementById('title').value;
-    createPara.appendChild(createTitle);
+                      createTitle.innerText = document.getElementById('title').value;
+                      createPara.appendChild(createTitle);
 
    //o Le contenu aura le contenu de la textblock
 
     var createContent = document.createElement('span');
-    createContent.innerText = document.getElementById('content').value;
-    createPara.appendChild(createContent);
-
-
-    
+                        createContent.innerText = document.getElementById('content').value;
+                        createPara.appendChild(createContent);
 
 //o Le paragraphe contiendra aussi un bouton permettant de supprimer ce
 //paragraphe
 
     var createButtonDel = document.createElement('input');
-    createButtonDel.setAttribute('type', 'submit');
-    createButtonDel.addEventListener('click', deletePara);
-    createPara.appendChild(createButtonDel);
+                          createButtonDel.setAttribute('type', 'submit');
+                          createButtonDel.setAttribute('value', 'Supprimer');
+                          createButtonDel.addEventListener('click', deletePara);
+                          createPara.appendChild(createButtonDel);
 
     function deletePara() {
         var delPara = document.getElementById('para');
@@ -79,10 +106,18 @@ function submitForm(event) {
 
 
 //o Le paragraphe aura un fond vert si la checkbox est cochée
-
-    if()
+       
+    if (document.getElementsById('check').checked) {
+        createPara.style.background-color('green');
+    }
+      
 //o Lors de l’écriture dans la textbox, forcer l’écriture en majuscule
 
+    function maj() {
+        var chaine = document.getElementById('title').addEventListener('keyup', function () {
+           
+        chaine.value = chaine.value.toUpperCase();
+        });
+    }
 
     document.getElementById('container').appendChild(createPara);
-}

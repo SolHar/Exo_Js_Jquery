@@ -17,12 +17,16 @@
     </div>
     <br />
 
+    <!-- Table multiplication -->
+
+    <div id="multitable"></div>
+
     <!-- Formulaire -->
     <div>
         <form action="/" method="post">
 
             <div>
-                <input type="text" id="title" placeholder="Titre" value="" />
+                <input type="text" id="title" onkeyup="maj()" placeholder="Titre"  />
             </div>
             <br />
 
@@ -31,8 +35,8 @@
             </div>
             <br />
             <div>
-                <label for="checkbox">Check</label>
-                <input type="checkbox" name="name" value="" />
+                <label for="checkbox">Fond vert</label>
+                <input type="checkbox" id="check" name="checkbox"  />
             </div>
             <br />
             <div>
