@@ -32,7 +32,7 @@ for (var i = 0; i < 8; i++) {
         ligne.appendChild(cellule);
             
     }
-    table.appendChild(table);
+    container.appendChild(table);
 
    }
 
