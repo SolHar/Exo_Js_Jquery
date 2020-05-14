@@ -29,12 +29,13 @@ for (var i = 0; i < 8; i++) {
     for (var j = 0; j < 8;  i++){
         var cellule = document.createElement('td');
         cellule.innerText = i * j;
-        ligne.appendChild(cellule);
-            
-    }
-    container.appendChild(table);
 
-   }
+        ligne.appendChild(cellule);        
+    }
+    table.appendChild(ligne);
+}
+
+container.appendChild(table);
 
     /*
      * // Exo 3
@@ -104,7 +105,7 @@ function submitForm(event) {
     //o Le paragraphe aura un fond vert si la checkbox est cochée
 
     if (document.getElementsById('check').checked) {
-        createPara.style.background - color('green');
+        createPara.style.backgroundcolor('green');
     }
 
     //o Le paragraphe contiendra aussi un bouton permettant de supprimer ce
