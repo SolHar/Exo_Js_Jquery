@@ -65,11 +65,21 @@ for (var i = 0; i < 8; i++) {
 
 
 //3. Sur le submit du formulaire:
+
+//o Lors de l’écriture dans la textbox, forcer l’écriture en majuscule
+
+function maj() {
+    var chaine = document.getElementById('title').addEventListener('keyup', function () {
+
+        chaine.value = chaine.value.toUpperCase();
+    });
+}
+
 //o Ajouter un paragraphe dans un div externe au formulaire(on peut avoir
 //plusieurs paragraphes)
 
 function submitForm(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     console.log('testjksdj');
 
     var createPara = document.createElement('p');
@@ -78,23 +88,29 @@ function submitForm(event) {
     //o Le titre aura le contenu de la textbox
 
     var createTitle = document.createElement('h3');
-                      createTitle.innerText = document.getElementById('title').value;
-                      createPara.appendChild(createTitle);
+    createTitle.innerText = document.getElementById('title').value;
+    createPara.appendChild(createTitle);
 
-   //o Le contenu aura le contenu de la textblock
+    //o Le contenu aura le contenu de la textblock
 
     var createContent = document.createElement('span');
-                        createContent.innerText = document.getElementById('content').value;
-                        createPara.appendChild(createContent);
+    createContent.innerText = document.getElementById('content').value;
+    createPara.appendChild(createContent);
 
-//o Le paragraphe contiendra aussi un bouton permettant de supprimer ce
-//paragraphe
+    //o Le paragraphe aura un fond vert si la checkbox est cochée
+
+    if (document.getElementsById('check').checked) {
+        createPara.style.background - color('green');
+    }
+
+    //o Le paragraphe contiendra aussi un bouton permettant de supprimer ce
+    //paragraphe
 
     var createButtonDel = document.createElement('input');
-                          createButtonDel.setAttribute('type', 'submit');
-                          createButtonDel.setAttribute('value', 'Supprimer');
-                          createButtonDel.addEventListener('click', deletePara);
-                          createPara.appendChild(createButtonDel);
+    createButtonDel.setAttribute('type', 'submit');
+    createButtonDel.setAttribute('value', 'Supprimer');
+    createButtonDel.addEventListener('click', deletePara);
+    createPara.appendChild(createButtonDel);
 
     function deletePara() {
         var delPara = document.getElementById('para');
@@ -102,22 +118,11 @@ function submitForm(event) {
     }
 
 
-//o Lors de l’ajout et de la suppression du paragraphe il doit y avoir une animation
+    //o Lors de l’ajout et de la suppression du paragraphe il doit y avoir une animation
 
 
-//o Le paragraphe aura un fond vert si la checkbox est cochée
-       
-    if (document.getElementsById('check').checked) {
-        createPara.style.background-color('green');
-    }
-      
-//o Lors de l’écriture dans la textbox, forcer l’écriture en majuscule
+    
 
-    function maj() {
-        var chaine = document.getElementById('title').addEventListener('keyup', function () {
-           
-        chaine.value = chaine.value.toUpperCase();
-        });
-    }
-
+    
     document.getElementById('container').appendChild(createPara);
+}
