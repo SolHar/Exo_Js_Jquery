@@ -4,6 +4,10 @@
 
 // o Ecrire « Hello World » dans la console
 
+window.addEventListener('load', function (e) {
+    maj();
+});
+
 console.log('Hello World');
 
 /* o Modifier le contenu d’un span qui est dans votre page lors d’un click sur un
