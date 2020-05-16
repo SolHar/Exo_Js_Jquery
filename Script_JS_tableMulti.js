@@ -1,25 +1,33 @@
 // JavaScript source code
 
-function multi() {
 
-// Récupération du container dans la vue
-var container = document.getElementById('multitable');
+window.addEventListener('load', function (e) {
 
-// Création de la table
-var newTable = document.createElement('table');
 
-for (var i = 1; i <= 10; i++) {
-    var ligne = document.createElement('tr');
+    document.getElementById('button').addEventListener('click', function () {
 
-    for (var y = 1; y <= 10; y++) {
-        var cellule = document.createElement('td');
-        cellule.innerText = i * y;
-        ligne.appendChild(cellule);
-    }
+       
+        var container = document.getElementById('multitable');
+        var newTable = document.createElement('table');
 
-    newTable.appendChild(ligne);
-}
+        for (var i = 1; i <= 10; i++) {
+            var ligne = document.createElement('tr');
+            
 
-// Ajout au container
-multitable.appendChild(newTable);
-};
+            for (var y = 1; y <= 10; y++) {
+                var cellule = document.createElement('td');
+                             
+                cellule.innerText = i * y;
+                
+                ligne.appendChild(cellule);
+                
+            }
+
+            newTable.appendChild(ligne);
+           
+        }
+
+        multitable.appendChild(newTable);
+    });
+
+});

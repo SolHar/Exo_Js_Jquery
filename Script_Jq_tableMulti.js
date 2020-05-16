@@ -1,22 +1,27 @@
 // JavaScript source code
+$(document).ready(function () {
 
-var container = $('#multitable');
+    $('#button').on('click', function () {
 
-var newtable = $('<table>');
+        var container = $('#multitable');
 
-for (var i = 1; i <=10; i++) {
-    var ligne = $('<tr>');
+        var newtable = $('<table>');
 
-    for (var j = 1; j <= 10; j++) {
-        var cellule = $('<td>');
-        cellule.text(i * j);
+        for (var i = 1; i <= 10; i++) {
+            var ligne = $('<tr>');
 
-        ligne.append(cellule);
+            for (var j = 1; j <= 10; j++) {
+                var cellule = $('<td>');
+                cellule.text(i * j);
 
-    }
+                ligne.append(cellule);
 
-    newtable.append(ligne);
+            }
 
-}
+            newtable.append(ligne);
 
-container.append(newtable);
+        }
+
+        container.append(newtable);
+    });
+});
