@@ -40,13 +40,14 @@
 //$(document).ready(function () { };
 //$(function () { })
 
-///if ($('#cbEstVert:checked').length)
+if ($('#cbEstVert:checked').length)
             contenu.css('backgroundColor', 'green');
 
 
 // Les points d'entrés
 //$(document).ready(function () {
 //    changeText();
+//}
 
 
 //function changeText() {
@@ -59,6 +60,9 @@
 
 //});
 
+
+
+////------------------- CHANGER LE TEXTE ------------------\\\\
 
 $(document).ready(function () {
     changeText();
