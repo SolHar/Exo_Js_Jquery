@@ -80,22 +80,43 @@ $(document).ready(function () {
 
 //o Afficher les tables de multiplications dans une table généré en JS
 
+//var container = $('#multitable');
+
+//var newtable = $('<table>');
+
+//for (var i = 0; i < 8; i++) {
+//    var ligne = $('<tr>');
+
+//    for (var j = 0; j < 8; i++) {
+//        var cellule = $('<td>');
+//        cellule.text(i * j);
+//        ligne.append(cellule);
+
+//    }
+//    container.append(table);
+
+//}
+
 var container = $('#multitable');
 
 var newtable = $('<table>');
 
-for (var i = 0; i < 8; i++) {
+for (var i = 1; i <= 10; i++) {
     var ligne = $('<tr>');
 
-    for (var j = 0; j < 8; i++) {
+    for (var j = 1; j <= 10; j++) {
         var cellule = $('<td>');
         cellule.text(i * j);
+
         ligne.append(cellule);
 
     }
-    container.append(table);
+
+    newtable.append(ligne);
 
 }
+
+container.append(newtable);
 
 
 
