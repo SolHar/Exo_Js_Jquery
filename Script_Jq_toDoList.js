@@ -2,9 +2,8 @@
 
 $(function () {
 
-    //maFonction();
-    //inputUpper();
-    //changeColor();
+    //addTaskToList();
+  
 
 
 
@@ -42,7 +41,26 @@ $(function () {
         // <input> => bouton pour ajouter la tache à la liste.
         var bouton = $('<input>');
         bouton.attr('type', 'submit');
+        bouton.attr('id', 'addToList');
         bouton.val('Ajouter');
+
+
+        var toDoList = $('<ul>');
+        toDoList.attr('class', 'list');
+
+        
+        
+
+
+        //bouton.click(function (e) {
+        //    var newTache = $('#nomTache').val(); 
+        //    $(this).append
+        //    var toDoList = $('<ul>');
+        //    toDoList.append(newTache);
+           
+        //   //toDoList.append(elementToDo);
+        //});
+
 
         // création des 2 listes
         //var toDoList = $('<ul>');
@@ -56,20 +74,34 @@ $(function () {
         blocForm.append(ajoutTache);
         blocForm.append(tacheToDo);
         blocForm.append(bouton);
+        blocForm.append(toDoList);
+
+        //toDoList.append(tache);
 
         bloc.append(blocForm);
 
 
         cardGlobal.append(bloc);
 
-        //bouton.click(function (e) {
-        //    newTache = $('#nomTache').value();
-        //    elementToDo.append(newTache);
-        //    toDoList.append(elementToDo);
-        //});
-
+        
 
         e.preventDefault();
     });
+
+
+    // Ajout d'une tache à faire
+
+    //function addTaskToList() {
+
+    //    $('#addToList').click(function () {
+    //        var tache = $('#nomTache').val();
+    //        if (tache.length) {
+    //            $('<li>').text(tache).append(toDoList);
+    //            e.preventDefault();
+    //        }
+    //    });
+    //};
+
+
 
 });
