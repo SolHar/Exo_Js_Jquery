@@ -1,36 +1,54 @@
 // JavaScript source code
 
-$(document).ready(function () {
+$(function () { 
 
-    document.getElementById('title').addEventListener('keyup', function () {
+   
+    $('#title').keyup(function (e) {
         this.value = this.value.toUpperCase();
-        $('#title').onkeyup(function () {
-            this.val() = this.val(toUpperCase);
-        })
+        e.preventDefault();
+    });
+
+   
 
 
-$('#container').submit(function () {
-    var containerPara = $('#container');
+    $('#formPara').submit(function (e) {
 
-    var bloc = $('<div>')
-    var titre = $('<h1>');
-    var contenu = $('<p>');
-    var bouton = $('<input>');
 
-    titre.text($('#title').val());
-    contenu.text($('#content').val());
+        var containerPara = $('#container');
 
-    if ($('#cbEstVert:checked').length)
-        contenu.css('backgroundColor', 'green');
+        var bloc = $('<div>')
+        var titre = $('<h1>');
+        var contenu = $('<p>');
+        var bouton = $('<input>');
 
-    bouton.val("Supprimer");
-    bouton.attr('type', 'submit');
+        titre.text($('#title').val());
+        contenu.text($('#content').val());
 
-    bloc.append(titre);
-    bloc.ppend(content);
-    bloc.append(bouton);
 
-    containerPara.append(bloc);
+        if ($('#check:checked').length){
+           //contenu.css('backgroundColor', 'green');
+            contenu.attr('class', 'p-3 mb-2 bg-success text-white');
+        }
+
+        bloc.attr('class', 'border border-info rounded');
+        bloc.css('padding', '10px');
+        bloc.css('margin', '10px');
+
+        bouton.val("Supprimer");
+        bouton.attr('type', 'submit');
+        bouton.click(function (e) {
+            bloc.remove();
+        });
+
+        bloc.append(titre);
+        bloc.append(contenu);
+        bloc.append(bouton);
+
+        containerPara.append(bloc);
+
+        e.preventDefault();
+    });
+
+
+
 });
-
-};
